@@ -11,7 +11,7 @@ st.set_page_config(page_title="Health Prediction App", layout="wide")
 # Load the saved model and artifacts
 @st.cache_resource
 def load_model():
-    artifacts = joblib.load('health_care_ML.joblib')
+    artifacts = joblib.load('health_model.joblib')
     return artifacts
 
 try:
@@ -20,7 +20,7 @@ try:
     feature_names = artifacts['feature_names']
     feature_importance = artifacts['feature_importance']
 except:
-    st.error("Please ensure 'health_care_ML.joblib' is in the same directory as this script")
+    st.error("Please ensure 'health_model.joblib' is in the same directory as this script")
     st.stop()
 
 # Title and description
